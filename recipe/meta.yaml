@@ -1,34 +1,29 @@
 {% set name = "waybackpack" %}
-{% set version = "0.3.5" %}
-{% set compress_type = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "a0aa1575d4eb49707eabd4ea0b98c54be6d811a081a0395160f9f9b9dbfa4c31" %}
-{% set build = 1 %}
+{% set version = "0.3.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: c120b68f7bdd8f14626c2363f7422fe2938866d31380fcd2ad43e89e25d6a7a6
 
 build:
   noarch: python
   entry_points:
     - waybackpack = waybackpack.cli:main
-  number: {{ build }}
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
     - setuptools
 
   run:
-    - python
+    - python >=3.6
     - requests
 
 test:
@@ -37,6 +32,10 @@ test:
 
   commands:
     - waybackpack --help
+    - pip check
+  
+  requires: 
+    - pip
 
 about:
   home: https://github.com/jsvine/waybackpack
@@ -51,3 +50,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen
