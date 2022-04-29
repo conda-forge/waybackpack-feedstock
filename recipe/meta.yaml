@@ -1,5 +1,5 @@
 {% set name = "waybackpack" %}
-{% set version = "0.3.7" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c120b68f7bdd8f14626c2363f7422fe2938866d31380fcd2ad43e89e25d6a7a6
+  sha256: 3421221c6e1b2fbd8e5a54caa6788636ed1b40a1d4d894e77389cfb4798057f2
 
 build:
   noarch: python
@@ -33,8 +33,8 @@ test:
   commands:
     - waybackpack --help
     - pip check
-  
-  requires: 
+
+  requires:
     - pip
 
 about:
@@ -43,7 +43,7 @@ about:
   license_file: {{ RECIPE_DIR }}/LICENSE.txt
   license: MIT
   license_family: MIT
-  summary: 'Command-line tool that lets you download the entire Wayback Machine archive for a given URL.'
+  summary: Command-line tool that lets you download the entire Wayback Machine archive for a given URL.
   dev_url: https://github.com/jsvine/waybackpack
   doc_url: https://github.com/jsvine/waybackpack
 
