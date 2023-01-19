@@ -1,5 +1,5 @@
 {% set name = "waybackpack" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3421221c6e1b2fbd8e5a54caa6788636ed1b40a1d4d894e77389cfb4798057f2
+  sha256: 9bb4313a8948365c0d404d6e2ed872e1166a02c164996e6e9770980483e23c02
 
 build:
   noarch: python
