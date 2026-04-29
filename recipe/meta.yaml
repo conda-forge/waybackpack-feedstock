@@ -13,7 +13,7 @@ build:
   noarch: python
   entry_points:
     - waybackpack = waybackpack.cli:main
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -41,7 +41,7 @@ test:
 about:
   home: https://github.com/jsvine/waybackpack
   # No MANIFEST.in - see https://github.com/jsvine/waybackpack/pull/25
-  license_file: {{ RECIPE_DIR }}/LICENSE.txt
+  license_file: LICENSE.txt
   license: MIT
   license_family: MIT
   summary: Command-line tool that lets you download the entire Wayback Machine archive for a given URL.
